@@ -2,8 +2,9 @@
 import React from 'react';
 import { SafeAreaView, Text } from 'react-native';
 import { globalStyles } from '../../styles';
+import { SettingsPageProps } from '../../pagetypes';
 
-const SettingsPage: React.FC = () => (
+const SettingsPage: React.FC<SettingsPageProps> = () => (
   <SafeAreaView style={globalStyles.container}>
     <Text style={globalStyles.paragraph}>Settings Page</Text>
   </SafeAreaView>

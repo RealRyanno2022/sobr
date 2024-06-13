@@ -1,9 +1,12 @@
-// GradientBackground.tsx
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export const GradientBackground: React.FC = ({ children }) => (
+interface GradientBackgroundProps {
+  children: ReactNode;
+}
+
+const GradientBackground: React.FC<GradientBackgroundProps> = ({ children }) => (
   <View style={StyleSheet.absoluteFillObject}>
     <LinearGradient
       colors={['#ffffff', '#C0C0C0', '#C0C0C0']}

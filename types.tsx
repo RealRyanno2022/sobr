@@ -1,8 +1,9 @@
 // types.ts
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { ReactNode } from "react";
 
+// Define the parameter list for all screens
 export type ParamList = {
-  SplashScreen: undefined; // Correct usage without quotes
+  SplashScreen: undefined; // Define parameters if needed
   Details: undefined; // Replace with actual params if needed
   ClockPage: undefined;
   CounsellingPage: undefined;
@@ -15,23 +16,18 @@ export type ParamList = {
   MenuScreen: undefined;
 };
 
-export type MenuScreenProps = {
-  icon: any;
-  navigation: NativeStackNavigationProp<ParamList, 'MenuScreen'>;
-}
-
 // Define prop types for your screens
-export type SplashScreenProps = {
-  navigation: NativeStackNavigationProp<ParamList, 'SplashScreen'>;
-};
 
 export type NavButtonProps = {
-  navigation: NativeStackNavigationProp<ParamList>;
   textKey: string;
   destination: keyof ParamList;
   icon: any;
 };
 
+export type GradientBackgroundProps = {
+  children: ReactNode;
+}
+
 export type MenuSignProps = {
   icon: any;
-}
+};

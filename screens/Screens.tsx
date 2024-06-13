@@ -1,9 +1,8 @@
-// App.tsx
+// App.tsx (or Screens.tsx)
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from '../pages/auth/SplashScreen';
-
 import ClockPage from '../pages/app/ClockPage';
 import CounsellingPage from '../pages/app/CounsellingPage';
 import SocialPage from '../pages/app/SocialPage';
@@ -22,8 +21,7 @@ const Screens: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="MenuScreen">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
-        
-           <Stack.Screen name="MenuScreen" component={MenuScreen} />
+        <Stack.Screen name="MenuScreen" component={MenuScreen} />
         <Stack.Screen name="ClockPage" component={ClockPage} />
         <Stack.Screen name="CounsellingPage" component={CounsellingPage} />
         <Stack.Screen name="SocialPage" component={SocialPage} />
