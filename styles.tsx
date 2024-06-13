@@ -1,10 +1,7 @@
 // styles.ts
 import { StyleSheet, Dimensions } from 'react-native';
-import { GradientProps } from './types';
 const { width } = Dimensions.get('window');
 const buttonWidth = (width - 40) / 2; // Adjust width to fit two buttons per row with margins
-
-
 
 
 export const globalStyles = StyleSheet.create({

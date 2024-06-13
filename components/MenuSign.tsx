@@ -1,17 +1,15 @@
 // components/MenuSign.tsx
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 import { globalStyles } from '../styles';
-import { translations } from '../languages/translations';
+import { MenuSignProps } from '../types';
 
-interface MenuSignProps {
-  textKey: string;
-}
 
-const MenuSign: React.FC<MenuSignProps> = ({ textKey }) => {
+
+const MenuSign: React.FC<MenuSignProps> = ({ icon }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{translations[textKey] || textKey}</Text>
+     <Image source={icon} style={globalStyles.icon} />
     </View>
   );
 };

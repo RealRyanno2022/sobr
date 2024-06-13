@@ -12,7 +12,13 @@ export type ParamList = {
   ResourcesPage: undefined;
   SettingsPage: undefined;
   RefocusPage: undefined;
+  MenuScreen: undefined;
 };
+
+export type MenuScreenProps = {
+  icon: any;
+  navigation: NativeStackNavigationProp<ParamList, 'MenuScreen'>;
+}
 
 // Define prop types for your screens
 export type SplashScreenProps = {
@@ -27,5 +33,5 @@ export type NavButtonProps = {
 };
 
 export type MenuSignProps = {
-  textKey: string;
+  icon: any;
 }
