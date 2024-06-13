@@ -6,7 +6,7 @@ import MenuSignHover from '../animations/MenuSignHover'; // Import the hover com
 
 const MenuSign: React.FC<MenuSignProps> = ({ icon }) => {
   return (
-    <MenuSignHover> {/* Wrap the icon in MenuSignHover */}
+    <MenuSignHover> 
       <View style={globalStyles.menuSign}>
         <Image source={icon} style={globalStyles.menuLogo} />
       </View>

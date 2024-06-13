@@ -31,5 +31,14 @@ yarn-error.*
 # local env files
 .env*.local
 
+# Ignore database files
+*.db
+db/
+dbconfig/
+*.sqlite3
+
+# Ignore environment files
+.env
+
 # typescript
 *.tsbuildinfo
