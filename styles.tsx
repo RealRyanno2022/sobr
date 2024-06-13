@@ -16,6 +16,10 @@ export const globalStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  menuLogo: {
+    height: 150,
+    width: 150,
+  },
   paragraph: {
     margin: 24,
     fontSize: 18,

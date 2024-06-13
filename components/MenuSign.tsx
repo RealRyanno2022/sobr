@@ -1,30 +1,22 @@
 // components/MenuSign.tsx
 import React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
-import { globalStyles } from '../styles';
+import { View, Image, StyleSheet } from 'react-native';
+import MenuSignHover from '../animations/MenuSignHover';
 import { MenuSignProps } from '../types';
-
+import { globalStyles } from '../styles';
 
 
 const MenuSign: React.FC<MenuSignProps> = ({ icon }) => {
   return (
-    <View style={styles.container}>
-     <Image source={icon} style={globalStyles.icon} />
-    </View>
+  
+      <MenuSignHover>
+        <Image source={icon} style={globalStyles.menuLogo} />
+      </MenuSignHover>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 20, // Adjust as needed
-    alignItems: 'center',
-    marginBottom: 20, // Add spacing below the sign
-  },
-  text: {
-    fontSize: 36, // Large font size
-    fontWeight: 'bold',
-    color: '#3498db', // Color matching your theme
-  },
+
 });
 
 export default MenuSign;

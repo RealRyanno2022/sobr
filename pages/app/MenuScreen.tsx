@@ -1,11 +1,18 @@
+// MenuScreen.tsx
+import React from 'react';
 import { View, ScrollView } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ParamList } from '../../types';
 import { globalStyles } from '../../styles';
 import NavButton from '../../components/NavButton';
 import MenuSign from '../../components/MenuSign'; 
 import GradientBackground from '../../components/GradientBackground';
 
-const MenuScreen: React.FC<MenuScreenProps> = ({ navigation, icon }) => {
+interface MenuScreenProps {
+  navigation: NativeStackNavigationProp<ParamList>;
+}
+
+const MenuScreen: React.FC<MenuScreenProps> = ({ navigation }) => {
   const buttons = [
     { textKey: 'myClocks', destination: 'ClockPage' },
     { textKey: 'counselling', destination: 'CounsellingPage' },
@@ -17,14 +24,14 @@ const MenuScreen: React.FC<MenuScreenProps> = ({ navigation, icon }) => {
     { textKey: 'refocus', destination: 'RefocusPage' },
   ];
 
-  // Path to your test.png icon
-  const testIcon = require('../../assets/test.png');
+  const testIcon = require('../../assets/logo.png');
+  const testNavIcon = require('../../assets/test.png')
 
   return (
     <View style={globalStyles.container}>
       <GradientBackground />
       <ScrollView contentContainerStyle={globalStyles.scrollContent}>
-        <MenuSign icon={icon} />
+        <MenuSign icon={testIcon} />
         <View style={globalStyles.grid}>
           {buttons.map((button, index) => {
             if (index % 2 === 0) {
@@ -34,14 +41,14 @@ const MenuScreen: React.FC<MenuScreenProps> = ({ navigation, icon }) => {
                     navigation={navigation}
                     destination={button.destination as keyof ParamList}
                     textKey={button.textKey}
-                    icon={testIcon}
+                    icon={testNavIcon}
                   />
                   {index + 1 < buttons.length && (
                     <NavButton
                       navigation={navigation}
                       destination={buttons[index + 1].destination as keyof ParamList}
                       textKey={buttons[index + 1].textKey}
-                      icon={testIcon}
+                      icon={testNavIcon}
                     />
                   )}
                 </View>
