@@ -5,12 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ParamList } from '../types';
 import { globalStyles } from '../styles';
-
-interface NavButtonProps {
-  destination: keyof ParamList;
-  textKey: string;
-  icon: any;
-}
+import { NavButtonProps } from '../types';
 
 const NavButton: React.FC<NavButtonProps> = ({ destination, textKey, icon }) => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamList>>();

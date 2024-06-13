@@ -12,7 +12,7 @@ interface MenuScreenProps {
   navigation: NativeStackNavigationProp<ParamList>;
 }
 
-const MenuScreen: React.FC<MenuScreenProps> = ({ navigation }) => {
+const MenuScreen: React.FC<MenuScreenProps> = () => {
   return (
     <View style={globalStyles.container}>
       <GradientBackground>
