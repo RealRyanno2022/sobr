@@ -20,6 +20,10 @@ export const globalStyles = StyleSheet.create({
     height: 150,
     width: 150,
   },
+  menuSign: {
+    height: 150,
+    width: 150,
+  },
   paragraph: {
     margin: 24,
     fontSize: 18,

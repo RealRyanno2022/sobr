@@ -1,10 +1,9 @@
 // types.ts
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-// Define the parameter list for all screens
 export type ParamList = {
-  SplashScreen: undefined; // Define parameters if needed
-  Details: undefined; // Replace with actual params if needed
+  SplashScreen: undefined;
+  Details: undefined;
   ClockPage: undefined;
   CounsellingPage: undefined;
   SocialPage: undefined;
@@ -16,18 +15,16 @@ export type ParamList = {
   MenuScreen: undefined;
 };
 
-// Define prop types for your screens
+export type GradientBackgroundProps = {
+  children: ReactNode;
+};
 
-export type NavButtonProps = {
-  textKey: string;
-  destination: keyof ParamList;
+export type MenuSignProps = {
   icon: any;
 };
 
-export type GradientBackgroundProps = {
-  children: ReactNode;
-}
-
-export type MenuSignProps = {
+export type MenuButtonProps = {
+  textKey: string;
+  destination: keyof ParamList;
   icon: any;
 };

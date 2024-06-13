@@ -1,7 +1,8 @@
 // MenuButtons.tsx
 import React from 'react';
-import { View } from 'react-native';
-import NavButton from './NavButton';
+import { View, TouchableOpacity, Text, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ParamList } from '../types';
 import { globalStyles } from '../styles';
 
@@ -25,19 +26,26 @@ const chunkArray = (array: typeof buttons, chunkSize: number) => {
 };
 
 const MenuButtons: React.FC = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<ParamList>>();
   const buttonRows = chunkArray(buttons, 2);
+
+  const handlePress = (destination: keyof ParamList) => {
+    navigation.navigate(destination);
+  };
 
   return (
     <View style={globalStyles.grid}>
       {buttonRows.map((row, rowIndex) => (
         <View key={rowIndex} style={globalStyles.gridRow}>
           {row.map((button) => (
-            <NavButton
+            <TouchableOpacity
               key={button.textKey}
-              destination={button.destination}
-              textKey={button.textKey}
-              icon={button.icon}
-            />
+              style={globalStyles.navButton}
+              onPress={() => handlePress(button.destination)}
+            >
+              <Image source={button.icon} style={globalStyles.icon} />
+              <Text style={globalStyles.buttonText}>{button.textKey}</Text>
+            </TouchableOpacity>
           ))}
         </View>
       ))}
