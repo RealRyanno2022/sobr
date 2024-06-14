@@ -1,3 +1,4 @@
+// JournalPage.tsx
 import React, { useEffect, useState } from 'react';
 import { View, TouchableOpacity, ScrollView, Text } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
@@ -5,10 +6,9 @@ import { globalStyles } from '../../styles/globalStyles';
 import JournalIntros from '../../components/JournalIntros';
 import { JournalEntry, GroupedEntries, RootStackParamList } from '../../types';
 import { fetchJournalEntries, initializeDatabase } from '../../dbconfig/dbjournalconfig';
-// import { dummyJournalEntries } from '../../debug/dummyjournalentries'; // Uncomment for testing
+import { JournalPageProps } from '../../pagetypes';
 
-const JournalPage: React.FC = () => {
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+const JournalPage: React.FC<JournalPageProps> = ({ navigation }) => {
   const [journalEntries, setJournalEntries] = useState<JournalEntry[]>([]);
 
   useEffect(() => {
@@ -25,9 +25,6 @@ const JournalPage: React.FC = () => {
         setJournalEntries([]); // Ensure it's set to an empty array
       }
     });
-
-    // For testing, use the dummy data instead of fetching from the database
-    // setJournalEntries(dummyJournalEntries);
   };
 
   const groupByMonth = (entries: JournalEntry[]): GroupedEntries => {
@@ -42,7 +39,8 @@ const JournalPage: React.FC = () => {
     }, {} as GroupedEntries);
   };
 
-  const groupedEntries = groupByMonth(journalEntries);
+  const entriesAdded = groupByMonth(entries);
+
 
   return (
     <View style={globalStyles.journalContainer}>
@@ -58,7 +56,7 @@ const JournalPage: React.FC = () => {
         </View>
       ) : (
         <ScrollView>
-          <JournalIntros groupedEntries={groupedEntries} navigation={navigation} />
+          <JournalIntros groupedEntries={entriesAdded} navigation={navigation} />
         </ScrollView>
       )}
       <TouchableOpacity

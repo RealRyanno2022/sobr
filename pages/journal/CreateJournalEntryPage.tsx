@@ -1,16 +1,20 @@
+// CreateJournalEntryPage.tsx
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { globalStyles } from '../../styles/globalStyles';
 import { insertJournalEntry, updateJournalEntry } from '../../dbconfig/dbjournalconfig';
+import { RootStackParamList, JournalEntry } from '../../types';
 
-const CreateJournalEntryPage = () => {
+type CreateJournalEntryPageRouteProp = RouteProp<RootStackParamList, 'CreateJournalEntryPage'>;
+
+const CreateJournalEntryPage: React.FC = () => {
   const navigation = useNavigation();
-  const route = useRoute();
+  const route = useRoute<CreateJournalEntryPageRouteProp>();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [isEditing, setIsEditing] = useState(false);
-  const [entryId, setEntryId] = useState(null);
+  const [entryId, setEntryId] = useState<number | null>(null);
 
   useEffect(() => {
     if (route.params?.entry) {
@@ -24,10 +28,10 @@ const CreateJournalEntryPage = () => {
 
   const saveEntry = () => {
     const date = new Date().toISOString();
-    if (isEditing) {
-      updateJournalEntry(entryId, title, content, date, () => navigation.navigate('JournalPage'));
+    if (isEditing && entryId !== null) {
+      updateJournalEntry(entryId, title, content, date, () => navigation.navigate('JournalPage' as never));
     } else {
-      insertJournalEntry(title, content, date, () => navigation.navigate('JournalPage'));
+      insertJournalEntry(title, content, date, () => navigation.navigate('JournalPage' as never));
     }
   };
 

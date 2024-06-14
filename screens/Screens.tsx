@@ -1,4 +1,4 @@
-// App.tsx (or Screens.tsx)
+// Screens.tsx
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -12,16 +12,16 @@ import ResourcesPage from '../pages/app/ResourcesPage';
 import SettingsPage from '../pages/app/SettingsPage';
 import RefocusPage from '../pages/app/RefocusPage';
 import MenuScreen from '../pages/app/MenuScreen';
-import { ParamList } from '../types';
 import CreateJournalEntryPage from '../pages/journal/CreateJournalEntryPage';
 import JournalEntryPage from '../pages/journal/JournalEntryPage';
+import { RootStackParamList } from '../types';
 
-const Stack = createNativeStackNavigator<ParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Screens: React.FC = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="JournalPage">
+      <Stack.Navigator initialRouteName="SplashScreen">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="MenuScreen" component={MenuScreen} />
         <Stack.Screen name="ClockPage" component={ClockPage} />
@@ -32,8 +32,6 @@ const Screens: React.FC = () => {
         <Stack.Screen name="ResourcesPage" component={ResourcesPage} />
         <Stack.Screen name="SettingsPage" component={SettingsPage} />
         <Stack.Screen name="RefocusPage" component={RefocusPage} />
-
-
         <Stack.Screen name="CreateJournalEntryPage" component={CreateJournalEntryPage} />
         <Stack.Screen name="JournalEntryPage" component={JournalEntryPage} />
       </Stack.Navigator>

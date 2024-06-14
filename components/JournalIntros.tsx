@@ -49,9 +49,5 @@ const JournalIntros: React.FC<JournalIntrosProps> = ({ groupedEntries, navigatio
   );
 };
 
-JournalIntros.propTypes = {
-  groupedEntries: PropTypes.object.isRequired,
-  navigation: PropTypes.object.isRequired,
-};
 
 export default JournalIntros;

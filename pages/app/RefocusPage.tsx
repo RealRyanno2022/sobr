@@ -4,10 +4,10 @@ import { SafeAreaView, Text } from 'react-native';
 import { globalStyles } from '../../styles/globalStyles';
 import { RefocusPageProps } from '../../pagetypes';
 
-const SettingsPage: React.FC<RefocusPageProps> = () => (
+const RefocusPage: React.FC<RefocusPageProps> = () => (
   <SafeAreaView style={globalStyles.container}>
     <Text style={globalStyles.paragraph}>Settings Page</Text>
   </SafeAreaView>
 );
 
-export default SettingsPage;
+export default RefocusPage;

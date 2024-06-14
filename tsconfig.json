@@ -2,26 +2,22 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "strict": true,
     "jsx": "react",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["./components/*"],
-      "@styles/*": ["./styles/*"]
-    }
+    "strict": false
   },
   "include": [
     "src/**/*",
     "components/**/*",
     "pages/**/*",
     "App.tsx",
-    "index.tsx"
-, "styles/globalStyles.d.ts"  ],
+    "index.ts"
+  ],
   "exclude": [
     "node_modules",
     "dist"
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }
