@@ -4,7 +4,7 @@ import { View, TouchableOpacity, Text, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ParamList } from '../types';
-import { globalStyles } from '../styles';
+import { globalStyles } from '../styles/globalStyles';
 
 const buttons = [
   { textKey: 'myClocks', destination: 'ClockPage' as keyof ParamList, icon: require('../assets/clock-solid.png') },

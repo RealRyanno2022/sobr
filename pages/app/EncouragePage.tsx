@@ -1,7 +1,7 @@
 // pages/EncouragePage.tsx
 import React from 'react';
 import { SafeAreaView, Text } from 'react-native';
-import { globalStyles } from '../../styles';
+import { globalStyles } from '../../styles/globalStyles';
 import { EncouragePageProps } from '../../pagetypes';
 
 const EncouragePage: React.FC<EncouragePageProps> = () => (

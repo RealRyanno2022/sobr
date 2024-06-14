@@ -1,7 +1,7 @@
 // pages/JournalPage.tsx
 import React from 'react';
 import { SafeAreaView, Text } from 'react-native';
-import { globalStyles } from '../../styles';
+import { globalStyles } from '../../styles/globalStyles';
 import { JournalPageProps } from '../../pagetypes';
 
 const JournalPage: React.FC<JournalPageProps> = () => (

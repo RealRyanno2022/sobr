@@ -3,7 +3,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { GradientBackgroundProps } from '../types';
-import { globalStyles } from '../styles';
+import { globalStyles } from '../styles/globalStyles';
 
 const GradientBackground: React.FC<GradientBackgroundProps> = ({ children }) => {
   return (

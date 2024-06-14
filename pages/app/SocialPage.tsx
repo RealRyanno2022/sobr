@@ -1,7 +1,7 @@
 // pages/SocialPage.tsx
 import React from 'react';
 import { SafeAreaView, Text } from 'react-native';
-import { globalStyles } from '../../styles';
+import { globalStyles } from '../../styles/globalStyles';
 import { SocialPageProps } from '../../pagetypes';
 
 const SocialPage: React.FC<SocialPageProps> = () => (

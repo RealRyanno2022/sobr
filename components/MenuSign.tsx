@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 import { MenuSignProps } from '../types';
-import { globalStyles } from '../styles';
+import { globalStyles } from '../styles/globalStyles';
 import MenuSignHover from '../animations/MenuSignHover'; // Import the hover component
 
 const MenuSign: React.FC<MenuSignProps> = ({ icon }) => {

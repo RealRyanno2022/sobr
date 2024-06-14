@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, Text, View, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
-import { globalStyles } from '../../styles';
+import { globalStyles } from '../../styles/globalStyles';
 import { CounsellingPageProps } from '../../pagetypes';
 import CounsellingText from '../../components/CounsellingText'
 

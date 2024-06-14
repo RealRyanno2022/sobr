@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, ScrollView, Image } from 'react-native';
-import { globalStyles } from '../styles';
+import { globalStyles } from '../styles/globalStyles';
 
 const CounselingComponent = ({ navigation:any }) => {
   return (

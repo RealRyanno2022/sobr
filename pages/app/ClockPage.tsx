@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView, Text, View, StyleSheet, ScrollView, RefreshControl, TextInput, TouchableOpacity } from 'react-native';
-import { globalStyles } from '../../styles';
+import { globalStyles } from '../../styles/globalStyles';
 import { ClockPageProps } from '../../pagetypes';
 import { FontAwesome5 } from '@expo/vector-icons';
 
