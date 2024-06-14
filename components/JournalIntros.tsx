@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { globalStyles } from '../../styles/globalStyles';
+import { globalStyles } from '../styles/globalStyles';
 import PropTypes from 'prop-types';
-import { JournalIntrosProps, JournalEntry } from '../../types';
+import { JournalIntrosProps, JournalEntry } from '../types';
 
 // Define the component
 const JournalIntros: React.FC<JournalIntrosProps> = ({ groupedEntries, navigation }) => {
@@ -42,10 +42,5 @@ const JournalIntros: React.FC<JournalIntrosProps> = ({ groupedEntries, navigatio
   );
 };
 
-// Optional: Add prop types for validation
-JournalIntros.propTypes = {
-  groupedEntries: PropTypes.object.isRequired,
-  navigation: PropTypes.object.isRequired,
-};
 
 export default JournalIntros;

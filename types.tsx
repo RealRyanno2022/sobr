@@ -30,7 +30,6 @@ export type MenuButtonProps = {
 };
 
 
-// Define the types for props
 export interface JournalEntry {
   id: number;
   title: string;
@@ -38,12 +37,13 @@ export interface JournalEntry {
   date: string;
 }
 
-export interface JournalIntrosProps {
-  groupedEntries: Record<string, JournalEntry[]>;
-  navigation: any; // Adjust this if you have specific navigation types
+export interface GroupedEntries {
+  [month: string]: JournalEntry[];
 }
 
-export type JournalIntrosProps {
+export interface JournalIntrosProps {
   groupedEntries: GroupedEntries;
-  navigation: any; // Use `any` if using React Navigation's navigate function, otherwise replace with the proper type
+  navigation: {
+    navigate: (screen: string, params?: object) => void;
+  };
 }

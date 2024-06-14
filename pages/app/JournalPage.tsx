@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { View, TouchableOpacity, ScrollView, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { globalStyles } from '../../styles/globalStyles';
-import JournalIntros from './JournalIntros';
+import JournalIntros from '../../components/JournalIntros';
 import { JournalEntry, GroupedEntries } from '../../types';
-import { dummyJournalEntries } from '../../dummyJournalData'; // Import the dummy data
+import { dummyJournalEntries } from '../../debug/dummyjournalentries'; // Import the dummy data
+import { initializeDatabase } from '../../dbconfig/dbjournalconfig';
 
 const JournalPage: React.FC = () => {
   const navigation = useNavigation();
@@ -31,6 +32,9 @@ const JournalPage: React.FC = () => {
 
   const groupedEntries = groupByMonth(journalEntries);
 
+
+
+  
   return (
     <View style={globalStyles.journalContainer}>
       <View style={globalStyles.journalTopBar}>
