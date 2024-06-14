@@ -21,7 +21,7 @@ const Stack = createNativeStackNavigator<ParamList>();
 const Screens: React.FC = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CounsellingPage">
+      <Stack.Navigator initialRouteName="JournalPage">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="MenuScreen" component={MenuScreen} />
         <Stack.Screen name="ClockPage" component={ClockPage} />

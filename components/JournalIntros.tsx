@@ -1,11 +1,18 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { globalStyles } from '../styles/globalStyles';
+import { globalStyles } from '../styles/globalStyles.js';
 import PropTypes from 'prop-types';
 import { JournalIntrosProps, JournalEntry } from '../types';
 
-// Define the component
 const JournalIntros: React.FC<JournalIntrosProps> = ({ groupedEntries, navigation }) => {
+  if (!groupedEntries || Object.keys(groupedEntries).length === 0) {
+    return (
+      <View style={globalStyles.emptyMessageContainer}>
+        <Text style={globalStyles.emptyMessageText}>No journal entries to display.</Text>
+      </View>
+    );
+  }
+
   return (
     <>
       {Object.entries(groupedEntries).map(([month, entries]) => (
@@ -42,5 +49,9 @@ const JournalIntros: React.FC<JournalIntrosProps> = ({ groupedEntries, navigatio
   );
 };
 
+JournalIntros.propTypes = {
+  groupedEntries: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
+};
 
 export default JournalIntros;

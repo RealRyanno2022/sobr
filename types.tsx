@@ -13,7 +13,7 @@ export type ParamList = {
   SettingsPage: undefined;
   RefocusPage: undefined;
   MenuScreen: undefined;
-  CreateJournalPage: undefined;
+  CreateJournalEntryPage: undefined;
   JournalEntryPage: undefined;
 };
 

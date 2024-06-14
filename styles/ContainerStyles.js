@@ -14,4 +14,15 @@ export const containerStyles = StyleSheet.create({
   contentContainer: {
     alignItems: 'center',
   },
+  emptyMessageContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  emptyMessageText: {
+    fontSize: 16,
+    color: 'gray',
+    textAlign: 'center',
+  },
 });

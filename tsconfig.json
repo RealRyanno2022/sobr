@@ -1,6 +1,27 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@styles/*": ["./styles/*"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "components/**/*",
+    "pages/**/*",
+    "App.tsx",
+    "index.tsx"
+, "styles/globalStyles.d.ts"  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
