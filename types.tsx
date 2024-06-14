@@ -13,6 +13,8 @@ export type ParamList = {
   SettingsPage: undefined;
   RefocusPage: undefined;
   MenuScreen: undefined;
+  CreateJournalPage: undefined;
+  JournalEntryPage: undefined;
 };
 
 export type GradientBackgroundProps = {

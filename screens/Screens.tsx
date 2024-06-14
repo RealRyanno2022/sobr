@@ -13,6 +13,8 @@ import SettingsPage from '../pages/app/SettingsPage';
 import RefocusPage from '../pages/app/RefocusPage';
 import MenuScreen from '../pages/app/MenuScreen';
 import { ParamList } from '../types';
+import CreateJournalEntryPage from '../pages/journal/CreateJournalEntryPage';
+import JournalEntryPage from '../pages/journal/JournalEntryPage';
 
 const Stack = createNativeStackNavigator<ParamList>();
 
@@ -30,6 +32,10 @@ const Screens: React.FC = () => {
         <Stack.Screen name="ResourcesPage" component={ResourcesPage} />
         <Stack.Screen name="SettingsPage" component={SettingsPage} />
         <Stack.Screen name="RefocusPage" component={RefocusPage} />
+
+
+        <Stack.Screen name="CreateJournalEntryPage" component={CreateJournalEntryPage} />
+        <Stack.Screen name="JournalEntryPage" component={JournalEntryPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
