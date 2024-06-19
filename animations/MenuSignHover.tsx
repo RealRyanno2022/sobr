@@ -1,6 +1,5 @@
-// components/MenuSignHover.tsx
 import React, { useEffect, useRef } from 'react';
-import { Animated, Easing, TouchableWithoutFeedback, StyleSheet } from 'react-native';
+import { Animated, Easing, TouchableWithoutFeedback, StyleSheet, ViewStyle } from 'react-native';
 
 interface MenuSignHoverProps {
   children: React.ReactNode; // The icon or any other component to be animated
@@ -60,7 +59,8 @@ const MenuSignHover: React.FC<MenuSignHoverProps> = ({ children }) => {
     }).start();
   };
 
-  const animatedStyle = {
+  // Explicitly typing animatedStyle
+  const animatedStyle: Animated.WithAnimatedObject<ViewStyle> = {
     transform: [{ translateY: animation }, { scale: scaleAnimation }],
   };
 

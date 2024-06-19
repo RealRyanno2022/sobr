@@ -1,49 +1,45 @@
 //pagetypes.tsx
 
-import { ParamList } from './types';
+import { RootStackParamList } from './types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 // Prop types for each screen
 export type SplashScreenProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'SplashScreen'>;
-  };
-  
-  export type DetailsProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'Details'>;
+    navigation: NativeStackNavigationProp<RootStackParamList, 'SplashScreen'>;
   };
   
   export type ClockPageProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'ClockPage'>;
+    navigation: NativeStackNavigationProp<RootStackParamList, 'ClockPage'>;
   };
   
   export type CounsellingPageProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'CounsellingPage'>;
+    navigation: NativeStackNavigationProp<RootStackParamList, 'CounsellingPage'>;
   };
   
   export type SocialPageProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'SocialPage'>;
+    navigation: NativeStackNavigationProp<RootStackParamList, 'SocialPage'>;
   };
   
   export type EncouragePageProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'EncouragePage'>;
+    navigation: NativeStackNavigationProp<RootStackParamList, 'EncouragePage'>;
   };
   
   export type JournalPageProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'JournalPage'>;
+    navigation: NativeStackNavigationProp<RootStackParamList, 'JournalPage'>;
   };
   
   export type ResourcesPageProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'ResourcesPage'>;
+    navigation: NativeStackNavigationProp<RootStackParamList, 'ResourcesPage'>;
   };
   
   export type SettingsPageProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'SettingsPage'>;
+    navigation: NativeStackNavigationProp<RootStackParamList, 'SettingsPage'>;
   };
   
   export type RefocusPageProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'RefocusPage'>;
+    navigation: NativeStackNavigationProp<RootStackParamList, 'RefocusPage'>;
   };
   
   export type MenuScreenProps = {
-    navigation: NativeStackNavigationProp<ParamList, 'MenuScreen'>;
+    navigation: NativeStackNavigationProp<RootStackParamList, 'MenuScreen'>;
   };

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity, Text, ScrollView, Image } from 'react-native';
 import { globalStyles } from '../styles/globalStyles';
 
-const CounselingComponent = ({ navigation:any }) => {
+const CounselingText = ({ navigation }) => {
   return (
     <View>
     <View style={globalStyles.topBar}>
@@ -51,4 +51,4 @@ const CounselingComponent = ({ navigation:any }) => {
   );
 };
 
-export default CounselingComponent;
+export default CounselingText;

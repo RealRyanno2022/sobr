@@ -1,12 +1,11 @@
 // JournalPage.tsx
+
 import React, { useEffect, useState } from 'react';
 import { View, TouchableOpacity, ScrollView, Text } from 'react-native';
-import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { globalStyles } from '../../styles/globalStyles';
 import JournalIntros from '../../components/JournalIntros';
-import { JournalEntry, GroupedEntries, RootStackParamList } from '../../types';
+import { JournalEntry, GroupedEntries, JournalPageProps } from '../../types';
 import { fetchJournalEntries, initializeDatabase } from '../../dbconfig/dbjournalconfig';
-import { JournalPageProps } from '../../pagetypes';
 
 const JournalPage: React.FC<JournalPageProps> = ({ navigation }) => {
   const [journalEntries, setJournalEntries] = useState<JournalEntry[]>([]);
@@ -29,7 +28,7 @@ const JournalPage: React.FC<JournalPageProps> = ({ navigation }) => {
 
   const groupByMonth = (entries: JournalEntry[]): GroupedEntries => {
     return entries.reduce((acc, entry) => {
-      if (entry.date) { // Ensure date exists
+      if (entry.date) {
         const date = new Date(entry.date);
         const month = date.toLocaleString('default', { month: 'long', year: 'numeric' });
         if (!acc[month]) acc[month] = [];
@@ -39,8 +38,7 @@ const JournalPage: React.FC<JournalPageProps> = ({ navigation }) => {
     }, {} as GroupedEntries);
   };
 
-  const entriesAdded = groupByMonth(entries);
-
+  const entriesAdded = groupByMonth(journalEntries);
 
   return (
     <View style={globalStyles.journalContainer}>

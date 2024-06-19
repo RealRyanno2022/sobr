@@ -17,6 +17,9 @@ export const imageStyles = StyleSheet.create({
     borderColor: 'blue',
     borderWidth: 4,
   },
+  gradient: {
+    fontSize: 12,
+  },
   icon: {
     width: 40,
     height: 40,

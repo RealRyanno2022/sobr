@@ -5,6 +5,7 @@
 
 
 import { View } from 'react-native';
+import React from 'react';
 // import { globalStyles } from '../../styles';
 // import  NavButton  from '../../components/NavButton';
 // import { SplashScreenProps } from '../../types';

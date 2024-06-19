@@ -1,16 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+// pages/CreateClockPage.tsx
+import React from 'react';
+import { SafeAreaView, Text } from 'react-native';
+import { globalStyles } from '../../styles/globalStyles';
 
-type Props = {}
-
-const CreateClockPage = (props: Props) => {
-  return (
-    <View>
-      <Text>CreateClockPage</Text>
-    </View>
-  )
+interface CreateClockPageProps {
+  // Define any props if needed, otherwise leave it empty
 }
 
-export default CreateClockPage
+const CreateClockPage: React.FC<CreateClockPageProps> = () => (
+  <SafeAreaView style={globalStyles.container}>
+    <Text style={globalStyles.paragraph}>Create Clock Page</Text>
+  </SafeAreaView>
+);
 
-const styles = StyleSheet.create({})
+export default CreateClockPage;

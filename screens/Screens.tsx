@@ -35,7 +35,7 @@ const Screens: React.FC = () => {
         <Stack.Screen name="CreateJournalEntryPage" component={CreateJournalEntryPage} />
         <Stack.Screen name="JournalEntryPage" component={JournalEntryPage} />
       </Stack.Navigator>
-    </NavigationContainer>
+      </NavigationContainer>
   );
 };
 

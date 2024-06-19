@@ -3,18 +3,18 @@ import React from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { ParamList } from '../types';
+import { RootStackParamList } from '../types';
 import { globalStyles } from '../styles/globalStyles';
 
 const buttons = [
-  { textKey: 'myClocks', destination: 'ClockPage' as keyof ParamList, icon: require('../assets/clock-solid.png') },
-  { textKey: 'counselling', destination: 'CounsellingPage' as keyof ParamList, icon: require('../assets/comment-solid.png') },
-  { textKey: 'accountability', destination: 'SocialPage' as keyof ParamList, icon: require('../assets/circle-nodes-solid.png') },
-  { textKey: 'encourage', destination: 'EncouragePage' as keyof ParamList, icon: require('../assets/flag-solid.png') },
-  { textKey: 'journal', destination: 'JournalPage' as keyof ParamList, icon: require('../assets/bookmark-solid.png') },
-  { textKey: 'resources', destination: 'ResourcesPage' as keyof ParamList, icon: require('../assets/book-open-solid.png') },
-  { textKey: 'settings', destination: 'SettingsPage' as keyof ParamList, icon: require('../assets/sliders-solid.png') },
-  { textKey: 'refocus', destination: 'RefocusPage' as keyof ParamList, icon: require('../assets/bullseye-solid.png') },
+  { textKey: 'myClocks', destination: 'ClockPage' as keyof RootStackParamList, icon: require('../assets/clock-solid.png') },
+  { textKey: 'counselling', destination: 'CounsellingPage' as keyof RootStackParamList, icon: require('../assets/comment-solid.png') },
+  { textKey: 'accountability', destination: 'SocialPage' as keyof RootStackParamList, icon: require('../assets/circle-nodes-solid.png') },
+  { textKey: 'encourage', destination: 'EncouragePage' as keyof RootStackParamList, icon: require('../assets/flag-solid.png') },
+  { textKey: 'journal', destination: 'JournalPage' as keyof RootStackParamList, icon: require('../assets/bookmark-solid.png') },
+  { textKey: 'resources', destination: 'ResourcesPage' as keyof RootStackParamList, icon: require('../assets/book-open-solid.png') },
+  { textKey: 'settings', destination: 'SettingsPage' as keyof RootStackParamList, icon: require('../assets/sliders-solid.png') },
+  { textKey: 'refocus', destination: 'RefocusPage' as keyof RootStackParamList, icon: require('../assets/bullseye-solid.png') },
 ];
 
 const chunkArray = (array: typeof buttons, chunkSize: number) => {
@@ -26,10 +26,10 @@ const chunkArray = (array: typeof buttons, chunkSize: number) => {
 };
 
 const MenuButtons: React.FC = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<ParamList>>();
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const buttonRows = chunkArray(buttons, 2);
 
-  const handlePress = (destination: keyof ParamList) => {
+  const handlePress = (destination: keyof RootStackParamList) => {
     navigation.navigate(destination);
   };
 

@@ -69,7 +69,7 @@ const ClockPage: React.FC<ClockPageProps> = ({ navigation }) => {
       {/* Floating Action Button */}
       <TouchableOpacity
         style={styles.fab}
-        onPress={() => navigation.navigate('CreateClockPage')}
+        // onPress={() => navigation.navigate('CreateClockPage')}
       >
         <FontAwesome5 name="plus" size={24} color="white" />
       </TouchableOpacity>

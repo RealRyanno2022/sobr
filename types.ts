@@ -1,8 +1,7 @@
 import { ReactNode } from 'react';
-import { RouteProp } from '@react-navigation/native';
-import { NavigationProp } from '@react-navigation/native';
+import { NavigationProp, RouteProp } from '@react-navigation/native';
 
-// Define navigation parameters
+// Define navigation parameters for each screen
 export type RootStackParamList = {
   SplashScreen: undefined;
   ClockPage: undefined;
@@ -14,9 +13,10 @@ export type RootStackParamList = {
   SettingsPage: undefined;
   RefocusPage: undefined;
   MenuScreen: undefined;
-  CreateJournalEntryPage: { entry?: JournalEntry }; // Update here
+  CreateJournalEntryPage: { entry?: JournalEntry };
   JournalEntryPage: { entry: JournalEntry };
 };
+
 // GradientBackgroundProps for component props
 export type GradientBackgroundProps = {
   children: ReactNode;
@@ -37,11 +37,10 @@ export type MenuButtonProps = {
 // JournalIntrosProps for component props
 export interface JournalIntrosProps {
   groupedEntries: GroupedEntries;
-  navigation: {
-    navigate: <T extends keyof RootStackParamList>(screen: T, params?: RootStackParamList[T]) => void;
-  };
+  navigation: NavigationProp<RootStackParamList>;
 }
 
+// JournalEntry type
 export interface JournalEntry {
   id: number;
   title: string;
@@ -49,21 +48,18 @@ export interface JournalEntry {
   date: string;
 }
 
+// GroupedEntries type, grouping journal entries by month
 export interface GroupedEntries {
   [month: string]: JournalEntry[];
 }
 
-export interface JournalIntrosProps {
-  groupedEntries: GroupedEntries;
+// Props for the JournalPage component
+export type JournalPageProps = {
   navigation: NavigationProp<RootStackParamList>;
 }
-
 
 // Navigation prop for a screen
 export type NavigationProps<T extends keyof RootStackParamList> = {
   route: RouteProp<RootStackParamList, T>;
-  navigation: {
-    navigate: <K extends keyof RootStackParamList>(screen: K, params?: RootStackParamList[K]) => void;
-    goBack: () => void;
-  };
+  navigation: NavigationProp<RootStackParamList>;
 };

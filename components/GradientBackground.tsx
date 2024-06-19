@@ -7,7 +7,7 @@ import { globalStyles } from '../styles/globalStyles';
 
 const GradientBackground: React.FC<GradientBackgroundProps> = ({ children }) => {
   return (
-    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={globalStyles.gradient}>
+    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
       <View style={globalStyles.container}>
         {children}
       </View>
